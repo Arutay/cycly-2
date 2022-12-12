@@ -13,14 +13,17 @@ public class Main {
     public static void task1() {
         System.out.println("Задача 1");
         {
-            int contribution = 15_000;
-            double total = 0;
-            int l = 2_459_000;
-            int month = 0;
-            while (total <= l) {
-                month = month + 1;
-                total = total + contribution;
-                System.out.println("Месяц " + month + " сумма накоплений равна " + total + " рублей");
+            int monthAmount = 15_000;
+            int amountPurpose = 2_459_000;
+            int total = 0;
+            int month = 1;
+            double montlyProcent = 0.01;
+
+            while (total <=amountPurpose){
+                total += monthAmount + total * montlyProcent;
+                System.out.println("Месяц " + month + " , сумма накоплений равна " +month+ +total );
+                month ++ ;
+
             }
         }
     }
@@ -92,15 +95,20 @@ public class Main {
 
     public static void task6() {
         System.out.println("Задача 6");
-            int salary = 15000;
+            int depositAmount = 15000;
             int total = 0;
-            int k = 7;
-            for (int i = 0; i <=108 ; i = i + 6) {
-                total = total + total / 100 * k;
-                total = total + salary;
-                {
-                    System.out.println("Месяц " + i + " Итого " + total);
+            double montlyPeocent  = 0.07;
+            int totalAmount = 12_000_000;
+            int monthPurpose = 9 * 12;
+            int monthCount = 1;
+
+            while (monthCount <= monthPurpose) {
+                depositAmount += depositAmount * montlyPeocent;
+
+                if (monthCount % 6 == 0) {
+                    System.out.println("Месяц " + monthCount + " сумма накоплений " + monthCount + depositAmount);
                 }
+                monthCount ++;
             }
         System.out.println();
     }
